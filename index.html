@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Slamming: Training a Speech Language Model on One GPU in a Day">
+    <meta property="og:title" content="Slamming: Training a Speech Language Model on One GPU in a Day"/>
+    <meta property="og:description"
+          content="Slamming: Training a Speech Language Model on One GPU in a Day"/>
+    <meta property="og:url" content=".."/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/images/teaser.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+
+    <meta name="twitter:title" content="Slamming: Training a Speech Language Model on One GPU in a Day">
+    <meta name="twitter:description"
+          content="Slamming: Training a Speech Language Model on One GPU in a Day">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/teaser.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="language modelling, SLM, audio processing, speech processing, deep learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title><em>Slamming</em>: Training a Speech Language Model on One GPU in a Day</title>
+    <!-- <link rel="icon" type="image/x-icon" href=""> -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title"><em>Slamming</em> : Training a Speech Language Model on One GPU in a Day</h1>
+                    <div class="is-size-5 publication-authors">
+                        <!-- Paper authors -->
+                        <span class="author-block">Anonymous Submission</span>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <center><img src="static/images/teaser.png" width="1200" height="500"></center>
+        </div>
+    </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We introduce <em>slam</em>, a recipe for training high-quality Speech Language Models (SLMs) on a single academic GPU in 24 hours. We do so through empirical analysis of model initialisation and architecture, synthetic training data, preference optimisation with synthetic data and tweaking all other components. We empirically demonstrate the obtained training recipe scales up to more compute getting results on par with leading SLMs in a fraction of the compute cost. We hope these insights will make SLM training and research more accessible. In the context of SLMs scaling laws, our results far outperform predicted compute optimal performance, giving an optimistic view to SLM feasibility. We open source code, data, models.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+
+<section class="section hero is-light">
+    <div class="hero-body">
+        <div class="container">
+
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Generation Examples</h2>
+                    We provide some generation examples of both <em>Slam</em> and <em>Slam</em> (scaled) compared to the official TWIST-7B on some in the wild samples. Note that all models use a single speaker vocoder thus the voice is changed in re-synthesis.
+                    <br>
+                    <table class="audio-table table is-hoverable is-fullwidth" style="background-color: transparent;">
+                        <thead>
+                        <tr>
+                            <th>Prompt</th>
+                            <th><em>Slam</em></th>
+                            <th><em>Slam</em> (scaled)</th>
+                            <th>TWIST-7B</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/prompt/sample_1.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam/sample_1.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam_s/sample_1.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/twist7/sample_1.wav>
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/prompt/sample_2.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam/sample_2.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam_s/sample_2.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/twist7/sample_2.wav>
+                                </audio>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/prompt/sample_3.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam/sample_3.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam_s/sample_3.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/twist7/sample_3.wav>
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/prompt/sample_4.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam/sample_4.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam_s/sample_4.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/twist7/sample_4.wav>
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/prompt/sample_5.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam/sample_5.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/slam_s/sample_5.wav>
+                                </audio>
+                            </td>
+                            <td class="audio-cell">
+                                <audio controls>
+                                    <source src=./static/audio/twist7/sample_5.wav>
+                                </audio>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
